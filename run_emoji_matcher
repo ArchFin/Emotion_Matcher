@@ -3,3 +3,8 @@ from emotion_matcher import EmotionMatcher
 file = '/Users/a_fin/Documents/Emotion_Matcher/emoji_match.txt'
 
 
+matcher = EmotionMatcher(file)
+matcher.run_tool()
+
+
+matcher.predict_emotion("I said, I am fine.")
