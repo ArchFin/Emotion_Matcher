@@ -105,33 +105,3 @@ class EmotionMatcher:
         emoji = self.emoji_dict.get(prediction, "🤔")  # Default to thinking emoji if no match
         print(f"{text} {emoji}")
     
-
-
-
-
-
-
-
-
-#Actual run code 
-
-# test_size = 0.0995, test_accuracy = 0.5865772 best so far using linear SVC
-
-    
-#Trial
-# emoji_dict = {"joy":"😁", "fear":"😱", "anger":"😠", "sadness":"😢", "disgust":"😒", "shame":"😳", "guilt":"😬"}
-# t1 = "I hate physics"
-# t2 = "I have a fear of dogs"
-# t3 = "My dog died yesterday"
-# t4 = "I don't love you anymore..!"
-# t5 = "I am hungry for human flesh"
-# t6 = "I am happy"
-# t7 = "I am angry"
-
-# texts = [t1]
-
-# for text in texts: 
-#     features = create_feature(text, nrange=(1, 4))
-#     features = vectorizer.transform(features)
-#     prediction = clf.predict(features)[0]
-#     print(text, emoji_dict[prediction])    
