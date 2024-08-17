@@ -1,0 +1,5 @@
+from emotion_matcher import EmotionMatcher
+
+file = '/Users/a_fin/Documents/Emotion_Matcher/emoji_match.txt'
+
+
