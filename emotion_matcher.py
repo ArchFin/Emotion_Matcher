@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+
 def format_prediction(func):
     def wrapper(*args, **kwargs):
         print("=" * 40)
@@ -70,14 +71,14 @@ class EmotionMatcher:
             X_all.append(self.create_feature(text))
 
         
-        X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=0.0995, random_state=123)
+        X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size=0.1, random_state=123)
 
         # Vectorize the text data using TF-IDF
         X_train = self.vectorizer.fit_transform(X_train)
         X_test = self.vectorizer.transform(X_test)
 
         # Hyperparameter tuning for LinearSVC
-        param_grid = {'C': [0.05, 0.06, 0.07, 0.08, 0.09, 0.1]}
+        param_grid = {'C': [0.11]}
         self.clf = GridSearchCV(LinearSVC(random_state=123), param_grid, cv=5)
         
         train_acc, test_acc = self.train_test(self.clf, X_train, X_test, y_train, y_test)
